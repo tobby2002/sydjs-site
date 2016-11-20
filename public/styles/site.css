@@ -1,0 +1,51 @@
+[18:14:25:096] [Titanium.Host] [Information] Loaded module = tiapp
+[18:14:25:174] [Titanium.Host] [Information] Loaded module = tifilesystem
+[18:14:25:176] [Titanium.Host] [Information] Loaded module = tiplatform
+[18:14:25:178] [Titanium.Host] [Information] Loaded module = tiui
+[18:14:25:180] [Titanium.Host] [Information] Loaded module = ticodec
+[18:14:25:181] [Titanium.Host] [Information] Loaded module = tidatabase
+[18:14:25:182] [Titanium.Host] [Information] Loaded module = timedia
+[18:14:25:184] [Titanium.Host] [Information] Loaded module = timonkey
+[18:14:25:238] [Titanium.Host] [Information] Loaded module = tinetwork
+[18:14:25:240] [Titanium.Host] [Information] Loaded module = tiprocess
+[18:14:25:241] [Titanium.Host] [Information] Loaded module = tiworker
+[18:14:25:241] [Titanium.JavaScript] [Information] Loading JS path=/Users/iosdeveloper/Library/Application Support/Titanium/modules/osx/tifilesystem/1.1.0/tifilesystemmodule.js
+[18:14:25:311] [Titanium.Host] [Information] Loaded module = tifilesystem
+[18:14:25:311] [Titanium.JavaScript] [Information] Loading JS path=/Users/iosdeveloper/Library/Application Support/Titanium/modules/osx/tinetwork/1.1.0/tinetworkmodule.js
+[18:14:25:362] [Titanium.Host] [Information] Loaded module = tinetwork
+[18:14:25:362] [Titanium.JavaScript] [Information] Loading JS path=/Users/iosdeveloper/Library/Application Support/Titanium/modules/osx/tiprocess/1.1.0/tiprocessmodule.js
+[18:14:25:445] [Titanium.Host] [Information] Loaded module = tiprocess
+2016-11-21 03:14:25.708 SimpLESS[35415:933790] _createMenuRef called with existing principal MenuRef already associated with menu
+2016-11-21 03:14:25.708 SimpLESS[35415:933790] (
+	0   CoreFoundation                      0x94658a69 __raiseError + 201
+	1   libobjc.A.dylib                     0x99eb3fd1 objc_exception_throw + 276
+	2   CoreFoundation                      0x9465897d +[NSException raise:format:] + 141
+	3   AppKit                              0x9e0a5303 -[NSCarbonMenuImpl _createMenuRef] + 70
+	4   AppKit                              0x9e0a4ad9 -[NSCarbonMenuImpl _instantiateCarbonMenu] + 155
+	5   AppKit                              0x9e0a4a36 -[NSCarbonMenuImpl setupCarbonMenuBar] + 40
+	6   AppKit                              0x9e0a218b -[NSApplication finishLaunching] + 1368
+	7   AppKit                              0x9e0a185b -[NSApplication run] + 315
+	8   libkhost.dylib                      0x04ea4cc7 _ZN5kroll4Host7RunLoopEv + 423
+	9   libkhost.dylib                      0x04e2d0eb _ZN5kroll4Host3RunEv + 251
+	10  libkhost.dylib                      0x04e2d579 Execute + 73
+	11  SimpLESS                            0x0002155e _ZN9KrollBoot9StartHostEv + 350
+	12  SimpLESS                            0x00022170 main + 480
+	13  SimpLESS                            0x000032ea start + 54
+)
+Nov 21 03:14:26  SimpLESS[35415] <Error>: The function ‘CGFontSetShouldUseMulticache’ is obsolete and will be removed in an upcoming update. Unfortunately, this application, or a library it uses, is using this obsolete function, and is thereby contributing to an overall degradation of system performance.
+[18:14:35:285] [Titanium.Host] [Notice] Received exit signal (0)
+[18:14:35:519] [Titanium.Host] [Notice] Unregistering: tiapp
+[18:14:35:519] [Titanium.Host] [Notice] Unregistering: tifilesystem
+[18:14:35:519] [Titanium.Host] [Notice] Unregistering: tiplatform
+[18:14:35:519] [Titanium.Host] [Notice] Unregistering: tiui
+[18:14:35:519] [Titanium.Host] [Notice] Unregistering: ticodec
+[18:14:35:519] [Titanium.Host] [Notice] Unregistering: tidatabase
+[18:14:35:519] [Titanium.Host] [Notice] Unregistering: timedia
+[18:14:35:519] [Titanium.Host] [Notice] Unregistering: timonkey
+[18:14:35:519] [Titanium.Host] [Notice] Unregistering: tinetwork
+[18:14:35:519] [Titanium.Host] [Notice] Unregistering: tiprocess
+[18:14:35:519] [Titanium.Host] [Notice] Unregistering: tiworker
+[18:14:35:519] [Titanium.Host] [Notice] Unregistering: tifilesystem
+[18:14:35:519] [Titanium.Host] [Notice] Unregistering: tinetwork
+[18:14:35:519] [Titanium.Host] [Notice] Unregistering: tiprocess
+[18:14:35:519] [Titanium.Host] [Notice] Exiting with exit code: 0
