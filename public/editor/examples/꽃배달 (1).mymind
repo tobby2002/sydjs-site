@@ -1,0 +1,345 @@
+{
+	"root": {
+		"id": "zzirtsyn",
+		"text": "꽃배달",
+		"layout": "map",
+		"children": [
+			{
+				"id": "olqouudm",
+				"text": "#회원가입",
+				"side": "right",
+				"children": [
+					{
+						"id": "yvauiapl",
+						"text": "?아이디",
+						"value": "아이디를 입력해 주세요"
+					},
+					{
+						"id": "qytxqbro",
+						"text": "?패스워드",
+						"value": "여기는 패스워드 %s 입니다."
+					},
+					{
+						"id": "efybgyld",
+						"text": "?패스워드확인"
+					},
+					{
+						"id": "tttkzuko",
+						"text": "?이름"
+					},
+					{
+						"id": "toalyicq",
+						"text": "?전화번호"
+					},
+					{
+						"id": "npovhbsb",
+						"text": "#sys.default",
+						"collapsed": 1,
+						"children": [
+							{
+								"id": "uadqkmgm",
+								"text": "onload"
+							},
+							{
+								"id": "cxneipwj",
+								"text": "unload"
+							},
+							{
+								"id": "viniqqij",
+								"text": "stop"
+							},
+							{
+								"id": "ssmekkgo",
+								"text": "cancel"
+							},
+							{
+								"id": "lcwwhkok",
+								"text": "confirm"
+							},
+							{
+								"id": "xtsmuqls",
+								"text": "success"
+							},
+							{
+								"id": "gysgxraj",
+								"text": "unknown"
+							},
+							{
+								"id": "goawbalb",
+								"text": "lifetime"
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "tkzoutgd",
+				"text": "#주문",
+				"side": "right",
+				"children": [
+					{
+						"id": "tctvrudc",
+						"text": "?이름",
+						"children": [
+							{
+								"id": "zzrjvvhd",
+								"text": "#sys.callback"
+							},
+							{
+								"id": "wyewttxu",
+								"text": "#sys.success"
+							},
+							{
+								"id": "opeeiark",
+								"text": "#sys.fail"
+							}
+						]
+					},
+					{
+						"id": "gthxnghy",
+						"text": "?전화번호",
+						"collapsed": 1,
+						"children": [
+							{
+								"id": "dlicoavm",
+								"text": "#sys.callback"
+							},
+							{
+								"id": "vvxsuadx",
+								"text": "#sys.success"
+							},
+							{
+								"id": "uvlhydbd",
+								"text": "#sys.fail"
+							}
+						]
+					},
+					{
+						"id": "hcwjabph",
+						"text": "?주소"
+					},
+					{
+						"id": "gtzxljyl",
+						"text": "?기타전달사항"
+					},
+					{
+						"id": "honuupzb",
+						"text": "#sys.confirm",
+						"children": [
+							{
+								"id": "mqiqcvcg",
+								"text": "#sys.callback"
+							},
+							{
+								"id": "tetrgacs",
+								"text": "#sys.success"
+							},
+							{
+								"id": "xtonjsbj",
+								"text": "#sys.fail"
+							}
+						]
+					},
+					{
+						"id": "stziofys",
+						"text": "#sys.cancel",
+						"children": [
+							{
+								"id": "ejamgajr",
+								"text": "#sys.yes"
+							},
+							{
+								"id": "nuzkbicb",
+								"text": "#sys.no"
+							}
+						]
+					},
+					{
+						"id": "vxqsvads",
+						"text": "#sys.stop"
+					},
+					{
+						"id": "yyqpbnha",
+						"text": "#sys.unknown"
+					},
+					{
+						"id": "oxskbihs",
+						"text": "#sys.onload"
+					},
+					{
+						"id": "mvasanrv",
+						"text": "#sys.unload"
+					}
+				]
+			},
+			{
+				"id": "efwowcgl",
+				"text": "#날씨",
+				"side": "left",
+				"value": "오늘의 날씨 %s 입니다.",
+				"children": [
+					{
+						"id": "wtigtyej",
+						"text": "@sys.date",
+						"children": [
+							{
+								"id": "bvfpadmq",
+								"text": "오늘"
+							},
+							{
+								"id": "ggkiaedp",
+								"text": "내일"
+							},
+							{
+								"id": "shkgpdvy",
+								"text": "현재"
+							}
+						]
+					},
+					{
+						"id": "grhazcjf",
+						"text": "@sys.geocity",
+						"children": [
+							{
+								"id": "kcvwntwn",
+								"text": "전국"
+							},
+							{
+								"id": "odwzscve",
+								"text": "국내도시"
+							}
+						]
+					},
+					{
+						"id": "tpgofarf",
+						"text": "?지명",
+						"children": [
+							{
+								"id": "ntkxzgns",
+								"text": "#sys.callback",
+								"children": [
+									{
+										"id": "dxmbtirl",
+										"text": "<a href=\"http://mrtalk.co.kr\">http://mrtalk.co.kr</a>"
+									},
+									{
+										"id": "jidhofii",
+										"text": "post"
+									}
+								]
+							},
+							{
+								"id": "nwnelrol",
+								"text": "#sys.cancel"
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "yoyebswb",
+				"text": "#검색",
+				"side": "left",
+				"children": [
+					{
+						"id": "sliikuza",
+						"text": "?이름"
+					},
+					{
+						"id": "vvxyodmj",
+						"text": "?전화번호"
+					},
+					{
+						"id": "mwcubpyk",
+						"text": "#sys.retrieve"
+					}
+				]
+			},
+			{
+				"id": "ytqqpifs",
+				"text": "#행복",
+				"side": "left",
+				"children": [
+					{
+						"id": "lpinoaim",
+						"text": "가족",
+						"status": "computed"
+					},
+					{
+						"id": "uczxpaiv",
+						"text": "사랑",
+						"color": "#e33",
+						"status": "yes",
+						"shape": "underline"
+					},
+					{
+						"id": "obgajecg",
+						"text": "지안",
+						"status": "yes"
+					},
+					{
+						"id": "nlzrshac",
+						"text": "우식"
+					},
+					{
+						"id": "wghwfmbf",
+						"text": "양현"
+					},
+					{
+						"id": "iagdkrmw",
+						"text": "지찬"
+					},
+					{
+						"id": "rgwosnff",
+						"text": "지성"
+					},
+					{
+						"id": "arpoemgg",
+						"text": "바보",
+						"status": "no"
+					}
+				]
+			},
+			{
+				"id": "emlozlvv",
+				"text": "#sys.plugin",
+				"side": "right",
+				"children": [
+					{
+						"id": "doptldpe",
+						"text": "auth",
+						"children": [
+							{
+								"id": "ywxdgsjw",
+								"text": "kakaoplus"
+							},
+							{
+								"id": "fdgowvfh",
+								"text": "facebook"
+							},
+							{
+								"id": "lktkkycd",
+								"text": "google"
+							}
+						]
+					},
+					{
+						"id": "jauvixge",
+						"text": "db"
+					}
+				]
+			},
+			{
+				"id": "uwqctdiq",
+				"text": "#sys.default",
+				"side": "right",
+				"children": [
+					{
+						"id": "xuxsdwai",
+						"text": "onload"
+					}
+				]
+			}
+		]
+	}
+}

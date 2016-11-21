@@ -1,0 +1,227 @@
+{
+	"root": {
+		"id": "tmurgzly",
+		"text": "엔티티",
+		"layout": "graph-bottom",
+		"children": [
+			{
+				"id": "czsenlst",
+				"text": "@근조화환",
+				"side": "right",
+				"layout": "graph-right",
+				"children": [
+					{
+						"id": "racunwkb",
+						"text": "근조화환",
+						"children": [
+							{
+								"id": "bdiixsvk",
+								"text": "근조"
+							},
+							{
+								"id": "gbhgctsk",
+								"text": "근조 화환"
+							},
+							{
+								"id": "qvgktgoj",
+								"text": "조문 화환"
+							},
+							{
+								"id": "nmlbtleb",
+								"text": "근조용"
+							},
+							{
+								"id": "solxoaot",
+								"text": "장례용"
+							},
+							{
+								"id": "lugpftxq",
+								"text": "조문용"
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "odxlibsr",
+				"text": "@축하화환",
+				"side": "left",
+				"layout": "graph-right"
+			},
+			{
+				"id": "eyisjkue",
+				"text": "@시간",
+				"side": "right",
+				"layout": "graph-right",
+				"children": [
+					{
+						"id": "lqeihovx",
+						"text": "내일",
+						"children": [
+							{
+								"id": "optgonhi",
+								"text": "내일"
+							},
+							{
+								"id": "bvamzgry",
+								"text": "네일"
+							},
+							{
+								"id": "vtuevnfs",
+								"text": "다음날"
+							},
+							{
+								"id": "pzoibqim",
+								"text": "투모로"
+							},
+							{
+								"id": "xxtaolml",
+								"text": "내일날씨"
+							}
+						]
+					},
+					{
+						"id": "pgzetkrq",
+						"text": "오늘",
+						"children": [
+							{
+								"id": "wcaemeal",
+								"text": "오늘"
+							},
+							{
+								"id": "hhbxuksz",
+								"text": "투데이"
+							}
+						]
+					},
+					{
+						"id": "uszwjthk",
+						"text": "현재",
+						"children": [
+							{
+								"id": "cmyvoprp",
+								"text": "현재"
+							},
+							{
+								"id": "cevreaom",
+								"text": "지금"
+							},
+							{
+								"id": "sdvfhqbz",
+								"text": "지금바로"
+							},
+							{
+								"id": "hgdcqqcy",
+								"text": "now"
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "yowvvwmp",
+				"text": "@검색",
+				"layout": "graph-right",
+				"children": [
+					{
+						"id": "uplcpsyk",
+						"text": "검색",
+						"children": [
+							{
+								"id": "zdgblgdc",
+								"text": "검색"
+							},
+							{
+								"id": "urzntngi",
+								"text": "검색해줘"
+							},
+							{
+								"id": "mamzfnxh",
+								"text": "알아봐줘"
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "wqkscsuu",
+				"text": "@지역",
+				"layout": "graph-right",
+				"children": [
+					{
+						"id": "yjvvgbte",
+						"text": "도시",
+						"children": [
+							{
+								"id": "ijsxtxck",
+								"text": "강릉"
+							},
+							{
+								"id": "vpfcqcwi",
+								"text": "강화"
+							},
+							{
+								"id": "spbpqcyv",
+								"text": "거제"
+							},
+							{
+								"id": "vxidvpgz",
+								"text": "거창"
+							},
+							{
+								"id": "ylmhffyw",
+								"text": "고산"
+							},
+							{
+								"id": "debvdhrx",
+								"text": "고층"
+							},
+							{
+								"id": "xuhdlfje",
+								"text": "광주"
+							},
+							{
+								"id": "datmwdkp",
+								"text": "구미"
+							},
+							{
+								"id": "bxbhjjuv",
+								"text": "군산"
+							},
+							{
+								"id": "csowrokj",
+								"text": "금산"
+							}
+						]
+					},
+					{
+						"id": "wyrtgaqi",
+						"text": "전국",
+						"children": [
+							{
+								"id": "wpfaapxk",
+								"text": "전국"
+							},
+							{
+								"id": "mvspgxxq",
+								"text": "전지역"
+							},
+							{
+								"id": "mzvqrmyp",
+								"text": "대한민국"
+							},
+							{
+								"id": "lqpqmsdf",
+								"text": "우리나라"
+							},
+							{
+								"id": "bscasqoe",
+								"text": "전국지역"
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

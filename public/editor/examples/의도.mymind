@@ -1,0 +1,141 @@
+{
+	"root": {
+		"id": "eocjqmgu",
+		"text": "의도",
+		"layout": "map",
+		"children": [
+			{
+				"id": "uooxzvzr",
+				"text": "#회원가입",
+				"side": "right",
+				"children": [
+					{
+						"id": "bpkzhdge",
+						"text": "회원가입을 원합니다."
+					},
+					{
+						"id": "rxdpenqp",
+						"text": "회원가입은 어떻게 가입하죠"
+					},
+					{
+						"id": "anguyvjj",
+						"text": "회원가입절차를 가르쳐 주세요"
+					},
+					{
+						"id": "ppswtaaj",
+						"text": "이사이트 회원은 어떻게 가입하나요?"
+					},
+					{
+						"id": "skrjsspo",
+						"text": "회원가입"
+					},
+					{
+						"id": "zwqleycw",
+						"text": "회원가입을 하려고 합니다."
+					},
+					{
+						"id": "ydmknuoc",
+						"text": "회원가입에 대해서 설명해 주세요"
+					}
+				]
+			},
+			{
+				"id": "cekycriv",
+				"text": "#음성인식",
+				"side": "left",
+				"children": [
+					{
+						"id": "vacmhigg",
+						"text": "말도 할 수 있어"
+					},
+					{
+						"id": "hwxrxnbz",
+						"text": "음성인식"
+					},
+					{
+						"id": "ohpcphil",
+						"text": "음성인식 방법을 가르쳐줘"
+					},
+					{
+						"id": "xwzbjtgk",
+						"text": "스피치기능"
+					},
+					{
+						"id": "acncgvpj",
+						"text": "음성인식과 스피치"
+					},
+					{
+						"id": "necpywsv",
+						"text": "음성인식을 설명해줘"
+					},
+					{
+						"id": "afdtsjmp",
+						"text": "음성인식기능도 있어"
+					}
+				]
+			},
+			{
+				"id": "awhipaqb",
+				"text": "#무응답반응",
+				"side": "right",
+				"children": [
+					{
+						"id": "hrwtvwcl",
+						"text": "왜 대답이 없어"
+					},
+					{
+						"id": "akmtnack",
+						"text": "무응답"
+					},
+					{
+						"id": "pvvahavk",
+						"text": "대답이 없네"
+					},
+					{
+						"id": "sxhslgqw",
+						"text": "대답이 없지"
+					},
+					{
+						"id": "bqfbksrg",
+						"text": "대답을 안해도 되는거야"
+					}
+				]
+			},
+			{
+				"id": "ullydonh",
+				"text": "#위키",
+				"side": "left",
+				"children": [
+					{
+						"id": "harirten",
+						"text": "은 뭐지"
+					},
+					{
+						"id": "sftucgnv",
+						"text": "가 뭔지 알아봐줘"
+					},
+					{
+						"id": "mgvsdsfb",
+						"text": "은 누구야"
+					},
+					{
+						"id": "daiqwtrf",
+						"text": "가 누군지 알아"
+					},
+					{
+						"id": "ebyrpwcd",
+						"text": "의 정의 는 뭐지"
+					},
+					{
+						"id": "llfhobhl",
+						"text": "에 대해서 알고 싶어"
+					},
+					{
+						"id": "crnqbtmk",
+						"text": "위키"
+					}
+				]
+			}
+		]
+	}
+}
