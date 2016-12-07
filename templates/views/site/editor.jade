@@ -1,0 +1,357 @@
+doctype html
+html
+	head
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width,user-scalable=no,initial-scale=1.0')
+		title Mr.AI Editor
+		link(rel='icon', href='favicon.ico')
+		link(rel='stylesheet', href='../mind/font-awesome/css/font-awesome.min.css')
+		link(rel='stylesheet', href='/styles/site.min.css')
+		link(rel='stylesheet', href='../mind/izimodal/css/iziModal.min.css')
+		script(src='http://code.jquery.com/jquery-latest.min.js')
+		script(src='../mind/izimodal/js/iziModal.min.js')
+		script(src='../mind/my-mind.js')
+		link(rel='stylesheet', href='../mind/css/font.css')
+		link(rel='stylesheet', href='../mind/css/style.css')
+		link(rel='stylesheet', href='../mind/css/print.css', media='print')
+		style(type='text/css').
+			<!--
+			body {
+				font-size: 12pt;
+			}
+
+			/* IE 10, 11의 네이티브 화살표 숨기기 */
+			select {
+				width: 200px; /* 원하는 너비설정 */
+				padding: .8em .5em; /* 여백으로 높이 설정 */
+				font-family: inherit; /* 폰트 상속 */
+				background: url(https://farm1.staticflickr.com/379/19928272501_4ef877c265_t.jpg) no-repeat 95% 50%; /* 네이티브 화살표 대체 */
+				border: 1px solid #999;
+				border-radius: 0px; /* iOS 둥근모서리 제거 */
+				-webkit-appearance: none; /* 네이티브 외형 감추기 */
+				-moz-appearance: none;
+				appearance: none;
+			}
+			select::-ms-expand {
+				display: none;
+			}
+			-->
+		base(target='_blank')
+	body
+
+		ul#port
+			#tip Tab[sub]，Enter[sibling]
+		.ui
+			p
+				if user
+					a(href='/me', target='_self').user.hidden-xs
+						img(src=(user.photo.exists ? user._.photo.thumbnail(27, 27) : user.avatarUrl ||
+						'/images/avatar.png'), width=27).img-circle(style='border-radius:50%; vertical-align:middle;margin-left:100px;')
+					a.user.hidden-xs(href='/storylist', target='_self')
+						i.fa.fa-home.a-stack-2x(style='float:left;margin-right:8px;font-size:1.7em;')
+				else
+					li: a(href='/signin', data-from=page.path, data-initial='signin', target='_self').js-auth-trigger Sign in
+					li: a(href='/join', data-from=page.path, target='_self').js-auth-trigger Join
+			p
+				button(data-command='New', title='New')
+					img(src='../mind/icons/new.png', alt='New')
+				button(data-command='Load', title='Open')
+					img(src='../mind/icons/open.png', alt='Open')
+				button(data-command='Save', title='Save')
+					img(src='../mind/icons/save.png', alt='Save')
+				button(data-command='SaveAs', title='Save as')
+					img(src='../mind/icons/save-as.png', alt='Save as' style='width:32px;')
+			p
+			p#userid(style='font-size:small;display:none;')=user._id
+			p
+				span STORY
+				p#Storytitle(style='font-size:1.0em;color:#2e99e5;text-overflow: ellipsis;')
+			p
+				span Layout
+				select#layout
+					option(value='') (Inherit)
+			p
+				span Shape
+				select#shape
+					option(value='') (Automatic)
+			p
+				span CONTEXT
+				select#value
+					option(value='') (None)
+					option(value='num') CONTEXT입력
+					// <optgroup label="Formula">
+					// <option value="sum">Sum</option>
+					// <option value="avg">Average</option>
+					// <option value="min">Minimum</option>
+					// <option value="max">Maximum</option>
+					// </optgroup>
+			p
+				textarea#output
+			p
+				span Status
+				select#status
+					option(value='') None
+					option(value='yes') Yes
+					option(value='no') No
+					option(value='computed') Autocompute
+			p
+				span Color
+				span#color
+					a(data-color='', title='Inherit', href='#')
+					a(data-color='#000', title='Black', href='#')
+					a(data-color='#e33', title='Red', href='#')
+					a(data-color='#3e3', title='Green', href='#')
+					a(data-color='#33e', title='Blue', href='#')
+					a(data-color='#dd3', title='Yellow', href='#')
+					a(data-color='#3dd', title='Cyan', href='#')
+					a(data-color='#d3d', title='Magenta', href='#')
+					a(data-color='#fa3', title='Orange', href='#')
+			a#mrtalk(href='/', title='홈', target='_self')
+				img(src='../mind/Mr.Talk32x32.png', alt='Mr.Talk')
+			button#toggle(title='Toggle UI')
+			button(data-command='Help', title='Help')
+				img(src='../mind/icons/help.png', alt='Help')
+			input#Mindmap(title='Mindmap', type='image', name='mindmap', alt='Mindmap', src='../mind/icons/mindmap.png', value='')
+			input#Intent(title='Intent', type='image', name='intent', alt='Intent', src='../mind/icons/intent.png', value='')
+			input#Entity(title='Entity', type='image', name='entity', alt='Entity', src='../mind/icons/entity.png', value='')
+			input#Type(title='Type', type='image', name='entity', alt='Entity', src='../mind/icons/entity.png', value='', style='display:none;')
+			input#Storyid(title='Type', type='image', name='storyid', alt='storyid', src='../mind/icons/entity.png', value='', style='display:none;')
+			#throbber
+		#io.ui
+			h3
+			p
+				span Storage
+				select#backend
+			#file
+				p.desc
+					| Local files are suitable for loading/saving files from other mindmapping applications.
+				p(data-for='save')
+					span Format
+					select.format
+				p(data-for='save load')
+					button.go
+					button.cancel Cancel
+			#image
+				p.desc Export your design as a PNG image.
+				p(data-for='save')
+					button.go
+					button.cancel Cancel
+			#local
+				p.desc
+					| Your browser's localStorage can handle many mind maps and creates a permalink, but this URL cannot be shared.
+				p(data-for='load')
+					span Saved maps
+					select.list
+				p(data-for='save load')
+					button.go
+					button.cancel Cancel
+				p(data-for='load')
+					button.remove Delete
+			#firebase
+				p.desc Firebase offers real-time synchronization for true multi-user collaboration.
+				p(data-for='save load')
+					span Server
+					input.server(type='text')
+				p(data-for='save load')
+					span Auth
+					select.auth
+						option(value='') (None)
+						option(value='facebook') Facebook
+						option(value='twitter') Twitter
+						option(value='github') GitHub
+						option(value='persona') Persona
+				p(data-for='load')
+					span Saved maps
+					select.list
+				p(data-for='save load')
+					button.go
+					button.cancel Cancel
+				p(data-for='load')
+					button.remove Delete
+			#webdav
+				p.desc -----------------------------------------
+				p#stories Story List
+				p(data-for='save load')
+				p.desc -----------------------------------------
+					input.url(type='text' style='display:none')
+					input#_id.none(type='text', value=user._id)
+				p(data-for='save load')
+					button.go
+					button.cancel Cancel
+
+			#gdrive(style='display:none')
+				p.desc
+					| Maps stored in Google Drive have a permalink URL and can be shared with other users, if you allow this by setting proper permissions (inside Google Drive itself).
+				p(data-for='save')
+					span Format
+					select.format
+				p(data-for='save load')
+					button.go
+					button.cancel Cancel
+		#help.ui
+			img#close(src='../mind/icons/close.png', alt='Close', width='27', height='27', style='margin-top: 8px; position: fixed; margin-left: 212px; cursor:pointer;')
+			h3 Help
+			p
+				span Navigation
+			table.navigation
+			p
+				span Manipulation
+			table.manipulation
+			p
+				span Editing
+			table.editing
+			p
+				span Other
+			table.other
+		#menu
+			button(data-command='InsertChild')
+			button(data-command='InsertSibling')
+			button(data-command='Delete')
+			span
+			button(data-command='Edit')
+			button(data-command='Value')
+			span
+			button(data-command='Undo')
+			button(data-command='Redo')
+			button(data-command='Center')
+
+
+		// Trigger to open Modal
+		// Modal structure
+		#modal
+			// Page content
+		script.
+			$("#modal").iziModal({
+				iframe: true,
+				iframeHeight: 600,
+				iframeURL: "/storylist"
+			});
+
+			$(document).on('click', '.trigger', function (event) {
+				event.preventDefault();
+				$('#modal').iziModal('open', this); // Use "this" to get URL href or option 'iframeURL'
+			});
+
+			window.onload = function() {
+				MM.App.init();
+				MM.App.io.restore();
+				MM.UI.Backend.WebDAV.list();
+				//var arr = document.URL.match(/id=([-/.a-zA-Z0-9_~#%$?&=:200-377()]+)/);
+				var id = getURLParameters('id');
+				var type = getURLParameters('type');
+
+				if (id == 'null') {
+					MM.UI.Backend.WebDAV.save();
+					type = $('#Type').val();
+					id = $('#Storyid').val();
+					window.history.pushState('page2', 'Title', '/editor?id=' + id + '&type=' + type);
+				} else {
+					jqr_mindmap_load(type, id);
+					window.history.pushState('page2', 'Title', '/editor?id=' + id + '&type=' + type);
+				}
+				//window.history.pushState('page2', 'Title', '/editor?id=' + id + '&type=' + type);
+				//MM.UI.Backend.WebDAV.save();
+			}
+
+
+			$(document).ready(function () {
+				console.log("document loaded");
+				$('#list').click(function () {
+					MM.UI.Backend.WebDAV.list();
+				});
+
+				$('#delete').click(function () {
+					MM.UI.Backend.WebDAV.delete();
+				});
+
+				$('#Mindmap').click(function () {
+					jqr_mindmap_load('mindmap', $(this).val());
+				});
+
+				$('#Intent').click(function () {
+					jqr_mindmap_load('intent', $(this).val());
+				});
+
+				$('#Entity').click(function () {
+					jqr_mindmap_load('entity', $(this).val());
+				});
+
+				$('#Intent1').click(function () {
+
+					$("#modal").iziModal('open', function (modal) {
+
+						modal.startLoading();
+
+						$.get('/storylist', function (data) {
+							$("#modal .iziModal-content").html(data);
+
+							modal.stopLoading();
+						});
+
+					});
+				});
+
+
+				$('#close').click(function () {
+					MM.App.help.toggle();
+				});
+
+
+			});
+
+
+//			// http://izimodal.marcelodolce.com/#modal-large
+//			$("#modal").iziModal({
+//				title: 'MR.MIND',
+//				subtitle: '',
+//				headerColor: '#88A0B9',
+//				theme: '',  // light
+//				attached: '', // bottom, top
+//				icon: null,
+//				iconText: null,
+//				iconColor: '',
+//				rtl: false,
+//				width: 600,
+//				padding: 0,
+//				radius: 3,
+//				zindex: 999,
+//				iframe: false,
+//				iframeHeight: 400,
+//				iframeURL: null,
+//				focusInput: true,
+//				group: '',
+//				loop: false,
+//				navigateCaption: true,
+//				navigateArrows: true, // closeToModal, closeScreenEdge
+//				history: true,
+//				restoreDefaultContent: false,
+//				autoOpen: 0, // Boolean, Number
+//				bodyOverflow: false,
+//				fullscreen: false,
+//				openFullscreen: false,
+//				closeOnEscape: true,
+//				overlay: true,
+//				overlayClose: true,
+//				overlayColor: 'rgba(0, 0, 0, 0.4)',
+//				timeout: false,
+//				timeoutProgressbar: false,
+//				pauseOnHover: false,
+//				timeoutProgressbarColor: 'rgba(255,255,255,0.5)',
+//				transitionIn: 'comingIn',
+//				transitionOut: 'comingOut',
+//				transitionInOverlay: 'fadeIn',
+//				transitionOutOverlay: 'fadeOut',
+//				onFullscreen: function () {
+//				},
+//				onResize: function () {
+//				},
+//				onOpening: function () {
+//				},
+//				onOpened: function () {
+//				},
+//				onClosing: function () {
+//				},
+//				onClosed: function () {
+//				}
+//			});
+

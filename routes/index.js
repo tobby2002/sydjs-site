@@ -113,7 +113,11 @@ exports = module.exports = function (app) {
 	app.all('/me/create/post', routes.views.createPost);
 	app.all('/me/create/link', routes.views.createLink);
 
-	// Tools
+    // Editor
+    app.all('/editor', routes.views.editor);
+    app.all('/storylist', routes.views.storylist);
+
+    // Tools
 	app.all('/notification-center', routes.views.tools['notification-center']);
 
 	// API

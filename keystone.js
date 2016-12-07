@@ -19,8 +19,8 @@ var pkg = require('./package.json');
 
 keystone.init({
 
-	'name': 'SydJS',
-	'brand': 'SydJS',
+	'name': '미스터톡',
+	'brand': 'Mr.TALK',
 	'back': '/me',
 
 	'favicon': 'public/favicon.ico',

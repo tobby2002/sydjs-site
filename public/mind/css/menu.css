@@ -1,0 +1,40 @@
+#menu {
+	/*position: absolute;*/
+	/*z-index: 1;*/
+	/*border: 1px solid #666;*/
+	/*background-color: #fff;	*/
+	/*box-shadow: 0 0 1px 1px #666;*/
+	position: absolute;
+	z-index: 1;
+	/* border: 1px solid rgba(102, 102, 102, 0.15); */
+	background-color: #fff;
+	box-shadow: 0 0 1px 1px rgba(102, 102, 102, 0.27);
+}
+
+#menu button {
+	display: block;
+	background-color: transparent;
+	border: none;
+	margin: 0;
+	padding: 3px 6px;
+	font-size: 15px;
+	width: 130px;
+	text-align: left;
+	color:#666;
+}
+
+#menu button:hover {
+	font-weight: bold;
+}
+
+#menu span {
+	/*display: block;*/
+	/*border-top: 1px solid #666;*/
+	/*margin-top: 4px;*/
+	/*padding-top: 4px;*/
+	display: block;
+	border-top: 1px solid rgba(102, 102, 102, 0.27);
+	margin-top: 4px;
+	padding-top: 4px;
+	color:#666;
+}

@@ -19,3 +19,9 @@ node_modules
 ACCOUNTS.md
 
 graphql/schema.graphql
+.idea/jsLibraryMappings.xml
+.idea/misc.xml
+.idea/workspace.xml
+public/mind/icons/entity.psd
+public/mind/icons/mindmap.png
+public/mind/my-mind_testing.js

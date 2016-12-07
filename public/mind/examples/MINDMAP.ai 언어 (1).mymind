@@ -1,0 +1,545 @@
+{
+	"root": {
+		"id": "rtscvnva",
+		"text": "MINDMAP.ai 언어",
+		"layout": "map",
+		"children": [
+			{
+				"id": "aspmyfjw",
+				"text": "//본마인드맵은 마인드맵기반의 인공지능언어를 설명하는 마인드맵AI언어 자체이다",
+				"side": "right"
+			},
+			{
+				"id": "juqfxefn",
+				"text": "//mindmap.ai language is &nbsp;created by ws.Jeong",
+				"side": "left"
+			},
+			{
+				"id": "ihngjvnj",
+				"text": "프롤로그",
+				"side": "right"
+			},
+			{
+				"id": "gzbmojgx",
+				"text": "#회원가입",
+				"side": "right",
+				"children": [
+					{
+						"id": "lscxiuvi",
+						"text": "회원가입설명",
+						"value": "안녕하세요 회원가입은 다음과 같이 해주세요"
+					},
+					{
+						"id": "qayewtcw",
+						"text": "?이름",
+						"children": [
+							{
+								"id": "cfetacfg",
+								"text": "~in",
+								"value": "이름을 입력해 주세요"
+							},
+							{
+								"id": "zumibogs",
+								"text": "~callback",
+								"children": [
+									{
+										"id": "ojostvxa",
+										"text": "~insert"
+									}
+								]
+							},
+							{
+								"id": "qwpujlti",
+								"text": "~out",
+								"value": ":이름 을 입력하였습니다."
+							}
+						]
+					},
+					{
+						"id": "cblgqwen",
+						"text": "?성명",
+						"children": [
+							{
+								"id": "ukamvkhb",
+								"text": "~in"
+							},
+							{
+								"id": "dkivvgea",
+								"text": "~out"
+							},
+							{
+								"id": "dkyypyil",
+								"text": "~insert"
+							}
+						]
+					},
+					{
+						"id": "oesdhezx",
+						"text": "?이메일",
+						"children": [
+							{
+								"id": "twahazlm",
+								"text": "~insert"
+							}
+						]
+					},
+					{
+						"id": "ejzujdvk",
+						"text": "확인과정",
+						"children": [
+							{
+								"id": "mmyvxesz",
+								"text": "~script"
+							}
+						]
+					},
+					{
+						"id": "vavoxhqe",
+						"text": "가입완료설명"
+					}
+				]
+			},
+			{
+				"id": "kiijzwsj",
+				"text": "#날씨",
+				"side": "left",
+				"children": [
+					{
+						"id": "piiobmty",
+						"text": "날씨설명"
+					},
+					{
+						"id": "qvjgyceb",
+						"text": "@시간",
+						"children": [
+							{
+								"id": "iwepkboa",
+								"text": ":현재"
+							},
+							{
+								"id": "udlipnvo",
+								"text": ":오늘"
+							},
+							{
+								"id": "huhqxayt",
+								"text": "시간날씨결과"
+							}
+						]
+					},
+					{
+						"id": "bhzxokap",
+						"text": "@지역",
+						"children": [
+							{
+								"id": "bwteyatu",
+								"text": "결과내용"
+							}
+						]
+					},
+					{
+						"id": "sblwoyye",
+						"text": "@기온"
+					},
+					{
+						"id": "nngilbsn",
+						"text": "~extend",
+						"children": [
+							{
+								"id": "iczafqkk",
+								"text": "#sys.날씨"
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "yyjqnufa",
+				"text": "#꽃배달",
+				"side": "right",
+				"children": [
+					{
+						"id": "ortvkwzc",
+						"text": "설명"
+					},
+					{
+						"id": "zzeawjef",
+						"text": "?꽃종류",
+						"children": [
+							{
+								"id": "xstjekzq",
+								"text": "@축하용"
+							},
+							{
+								"id": "qplnyaxi",
+								"text": "@근조용"
+							}
+						]
+					},
+					{
+						"id": "mcrcqszk",
+						"text": "?가격선택",
+						"children": [
+							{
+								"id": "gaoitsos",
+								"text": "~case"
+							},
+							{
+								"id": "nutfmedr",
+								"text": "2~3만원"
+							},
+							{
+								"id": "zysqiuei",
+								"text": "3~4만원"
+							},
+							{
+								"id": "ltpujruw",
+								"text": "5만원~7만원"
+							},
+							{
+								"id": "mflychyb",
+								"text": "고객지정가"
+							}
+						]
+					},
+					{
+						"id": "ddzrbkqy",
+						"text": "?검색"
+					},
+					{
+						"id": "goigkbdp",
+						"text": "?선택"
+					},
+					{
+						"id": "yxvjkjji",
+						"text": "?재검색",
+						"children": [
+							{
+								"id": "nvsvuprj",
+								"text": "#긍정대답",
+								"children": [
+									{
+										"id": "osaasdxi",
+										"text": "~goto",
+										"children": [
+											{
+												"id": "vkhqhntd",
+												"text": "#꽃배달"
+											}
+										]
+									}
+								]
+							},
+							{
+								"id": "xqpanytd",
+								"text": "#부정대답",
+								"children": [
+									{
+										"id": "xscxjwtq",
+										"text": "주문해주셔서 감사합니다."
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "vsxfgvvu",
+				"text": "#인사예제",
+				"side": "right",
+				"children": [
+					{
+						"id": "kumuxnow",
+						"text": "$counter+=1"
+					},
+					{
+						"id": "pmstdial",
+						"text": "$counter=1",
+						"children": [
+							{
+								"id": "xnhtlapg",
+								"text": "첫인사"
+							}
+						]
+					},
+					{
+						"id": "yejgoohb",
+						"text": "$counter=2",
+						"children": [
+							{
+								"id": "chryigzc",
+								"text": "두번째인사"
+							}
+						]
+					},
+					{
+						"id": "bahqbzae",
+						"text": "$counter&gt;3",
+						"children": [
+							{
+								"id": "fittlkfm",
+								"text": "자주 인사를 하시네요",
+								"children": [
+									{
+										"id": "rvvzbapp",
+										"text": "$counter=0"
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "vptqiyjh",
+				"text": "#질문답변예제",
+				"side": "left",
+				"children": [
+					{
+						"id": "zwpfgeee",
+						"text": "#질문답변입력",
+						"children": [
+							{
+								"id": "cbsfuizz",
+								"text": "~while(true)"
+							},
+							{
+								"id": "kfpatski",
+								"text": "?질문"
+							},
+							{
+								"id": "zptocimf",
+								"text": "?답변"
+							},
+							{
+								"id": "lxqrdsnr",
+								"text": "입력",
+								"children": [
+									{
+										"id": "erdzakrz",
+										"text": "~insert",
+										"value": "{ question:?질문, answer:?답변 } "
+									}
+								]
+							},
+							{
+								"id": "phhpkmal",
+								"text": "#sys.stop",
+								"children": [
+									{
+										"id": "pvuroibk",
+										"text": "~break"
+									}
+								]
+							}
+						]
+					},
+					{
+						"id": "tugoocyi",
+						"text": "질문답변설명"
+					},
+					{
+						"id": "mkyorxdp",
+						"text": "?질의어",
+						"children": [
+							{
+								"id": "wgrfgtla",
+								"text": "~find",
+								"value": "{key:?질문, value:?답변 }",
+								"children": [
+									{
+										"id": "sbcztpvf",
+										"text": "#질문답변"
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "tvspkbfh",
+				"text": "~sys",
+				"side": "left",
+				"children": [
+					{
+						"id": "tkvmgjof",
+						"text": "callback"
+					},
+					{
+						"id": "xobfwhhk",
+						"text": "yes"
+					},
+					{
+						"id": "brghytkp",
+						"text": "no"
+					},
+					{
+						"id": "zilhcvlg",
+						"text": "stop"
+					},
+					{
+						"id": "ipgzavjh",
+						"text": "success"
+					},
+					{
+						"id": "lfhbhxim",
+						"text": "failure"
+					},
+					{
+						"id": "wyusbgbj",
+						"text": "unknown"
+					},
+					{
+						"id": "hhujcsxn",
+						"text": "lifetime=3"
+					},
+					{
+						"id": "inunpemg",
+						"text": "transaction=on"
+					}
+				]
+			},
+			{
+				"id": "ntbtmwwe",
+				"text": "~import",
+				"side": "right",
+				"children": [
+					{
+						"id": "tkmzkkyi",
+						"text": "#sys.auth"
+					}
+				]
+			},
+			{
+				"id": "hdtnnmhi",
+				"text": "~override",
+				"side": "right",
+				"children": [
+					{
+						"id": "lgigkxpp",
+						"text": "#sys.mindmap"
+					}
+				]
+			},
+			{
+				"id": "wwxbtcgk",
+				"text": "~value",
+				"side": "left",
+				"children": [
+					{
+						"id": "tktmtyrg",
+						"text": "$counter"
+					},
+					{
+						"id": "sgttsoin",
+						"text": "$callcounter"
+					}
+				]
+			},
+			{
+				"id": "vkasrngj",
+				"text": "~extend",
+				"side": "right",
+				"children": [
+					{
+						"id": "gjknzlmh",
+						"text": "#sys.member, #sys.register"
+					}
+				]
+			},
+			{
+				"id": "qwtokmcm",
+				"text": "#마인드상세설명",
+				"side": "left",
+				"children": [
+					{
+						"id": "kdqwrlhi",
+						"text": "회원가입타입"
+					},
+					{
+						"id": "mqvbrajy",
+						"text": "날씨타입"
+					},
+					{
+						"id": "iflwdlkf",
+						"text": "시스템표시자설명"
+					},
+					{
+						"id": "glfjrraa",
+						"text": "기본흐름설명"
+					},
+					{
+						"id": "lndbdfau",
+						"text": "구성요소"
+					},
+					{
+						"id": "hxmqgvqo",
+						"text": "$counter+=1"
+					}
+				]
+			},
+			{
+				"id": "necinnyx",
+				"text": "//마인드맵AI 3대원칙",
+				"side": "left",
+				"color": "#e33",
+				"children": [
+					{
+						"id": "svqexgsx",
+						"text": "유저의 입력값을 기반으로 자연어처리 분석된 #의도 @엔티티 :입력값들의 인자에 따라서 현재노드를 선정"
+					},
+					{
+						"id": "amtbstxb",
+						"text": "현재 노드는 절차 스크립트언어의 if 명령어 라인이며, 그 자식노드는 그 if명령문내의 각 라인과 같다."
+					},
+					{
+						"id": "iffqstuy",
+						"text": "#의도, @객체, :객체값, ~시스템명령어, ?입력변수(콜백), //주석, &nbsp;$변수, &nbsp;순수텍스트 및 각노드마다의 CONTEXT 등으로 구성되어 있다"
+					}
+				]
+			},
+			{
+				"id": "pulfvynx",
+				"text": "~init",
+				"side": "left",
+				"children": [
+					{
+						"id": "glykowsz",
+						"text": "auth=true"
+					},
+					{
+						"id": "mytkmiyd",
+						"text": "db=true"
+					},
+					{
+						"id": "biqcoxue",
+						"text": "in=true",
+						"value": "? 입력해 주세요."
+					},
+					{
+						"id": "ghsknhth",
+						"text": "out=true",
+						"value": "%s 을 입력하였습니다."
+					},
+					{
+						"id": "dgxbeiek",
+						"text": "sync=true"
+					},
+					{
+						"id": "cdevkiqy",
+						"text": "insert=true"
+					},
+					{
+						"id": "ljacrsxr",
+						"text": "usedefault=true"
+					},
+					{
+						"id": "zbtvfbeg",
+						"text": "stop=true"
+					}
+				]
+			}
+		]
+	}
+}
