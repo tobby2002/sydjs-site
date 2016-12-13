@@ -113,9 +113,11 @@ exports = module.exports = function (app) {
 	app.all('/me/create/post', routes.views.createPost);
 	app.all('/me/create/link', routes.views.createLink);
 
-    // Editor
+    // MindEditorStoryTalk
     app.all('/editor', routes.views.editor);
     app.all('/storylist', routes.views.storylist);
+    app.all('/story', routes.views.story);
+    app.all('/mindtalk', routes.views.mindtalk);
 
     // Tools
 	app.all('/notification-center', routes.views.tools['notification-center']);

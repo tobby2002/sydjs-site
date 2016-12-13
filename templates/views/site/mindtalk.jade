@@ -1,0 +1,46 @@
+html
+	head
+		base(href='/')
+		title Mr.talk AI2
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(property='og:title', content='미스터톡 음성인식 인공지능 - Mr.TALK')
+		meta(property='og:url', content='http://demo.mrtalk.co.kr/')
+		meta(property='og:description', content='Mr.TALK 음성인식 인공지능 데모페이지 입니다. 누구나 만드는 인공지능을 조만간 출시합니다...')
+		meta(property='og:image', content='https://mrtalk.co.kr/static/images/logo/zulipcornerlogo@2x.png')
+		link(rel='shortcut icon', href='favicon.ico', type='image/x-icon')
+		link(rel='stylesheet', href='../mindtalk/css/app.css')
+		script(type='text/javascript', src='//code.jquery.com/jquery-latest.min.js')
+	body
+
+		style(scoped='').
+			#speechbbbbox {border-radius:0em;top:-0em;padding:0em;padding-right:0em;border:0px solid #e0e0e0;font-size:14px;font-family:'돋움',Dotum,AppleGothic,sans-serif;position:relative;background:#f9f9f9;min-height:0em}
+			#speechbbbbox img {position:absolute;top:-2.7em;right:0.4em;border-radius:5.4em;border:0px solid #e9e9e9;background:#ffffff;padding:.0em;cursor:pointer;background-size: 24px 24px}
+			#speechbbbbox img :hover,#speechbbbbox.on img {background:rgba(234,67,53,0.7);font-weight:bold}
+			#speechbbbbox {color:#333}
+			#speechbbbbox span{display:block}
+			#speechbbbbox .cning{color:#bbb}
+		#view-change-button.button(onclick='PayloadPanel.togglePanel(event, this)')
+			img.option.full(src='../mindtalk/img/ChatButton.png')
+			img.option.not-full(src='../mindtalk/img/CodeButton.png')
+		#contentParent.responsive-columns-wrapper
+			#chat-column-holder.responsive-column.content-column
+				.chat-column
+					#scrollingChat
+					label.inputOutline(for='textInput')
+						input#textInput.input.responsive-column(placeholder='여기에 입력후 엔터키 또는 아이콘클릭후 말하세요', type='text', onkeydown='ConversationPanel.inputKeyDown(event, this)')
+					#speechbbbbox
+						img#mic_img(src='../mindtalk/img/mic_off.png', align='absmiddle', style='width:35px;height:35px;')
+			#payload-column.fixed-column.content-column(style='display:;')
+				#payload-initial-message
+					| 인공지능 'MR.TALK' 에게 말을 걸어 보세요..
+				#payload-request.payload
+				#payload-response.payload
+		script(src='../mindtalk/js/common.js')
+		script(src='../mindtalk/js/api.js')
+		script(src='../mindtalk/js/conversation.js')
+		script(src='../mindtalk/js/mrtalkrecognition.js')
+		script(src='../mindtalk/js/payload.js')
+		script(src='../mindtalk/js/global.js')
+		script(src='../mindtalk/js/mindstt.js')
+		script(type='text/javascript', language='javascript').

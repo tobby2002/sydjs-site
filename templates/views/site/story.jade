@@ -1,0 +1,44 @@
+doctype html
+html
+	head
+		meta(http-equiv='Content-type', content='text/html; charset=utf-8')
+		title Story
+		link(rel='stylesheet', media='all', href='../assets/plugins/bootstrap/css/bootstrap.min.css')
+		link(rel='stylesheet', media='all', href='../medea/style.css')
+		//script(src='../vendor/jquery/jquery-2.1.4.js')
+		script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
+		script(type='text/javascript', src='../assets/plugins/bootstrap/js/bootstrap.min.js')
+		script(src='../medea/lib/jquery.medea.js')
+		script(src='../medea/utils.js')
+	body.container
+		h5
+		p
+			| Story enable you to maintain separate intents, entities, and mindmap for each use or application.
+		.row
+			.col-md-12
+				#form
+			#source(style='display:none;')
+		script.
+			$(function() {
+				var obj = utils.simpleObject;
+				var form = $("#form").medea(obj);
+				form.on("medea.cancel", utils.logEvent("events"));
+				form.on("medea.submit", utils.logObjectChangeEvent("source"));
+				$(".input-group-addon").css("visibility","hidden");
+				$(".form-control").css("margin-left","14px");
+				$(".form-control").css("margin-top","7px");
+				//$(".input-group-addon").remove();
+				$("#medea-add-btn").css("visibility","hidden");
+				$("#medea-cancel-btn").css("visibility","hidden");
+				$("#medea-ok-btn").css("background-color","#008571");
+				$("#medea-ok-btn").css("color","#FDFDFD");
+				$("#medea-ok-btn").css("border-radius","20px");
+				$("#medea-ok-btn").text("Create");
+			});
+
+
+			window.onload = function () {
+				//alert("onload");
+				$(".input-group-addon").css("display","none");
+
+			}

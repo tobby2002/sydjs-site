@@ -3,6 +3,7 @@ html
 	head
 		meta(charset='utf-8')
 		meta(name='viewport', content='width=device-width,user-scalable=no,initial-scale=1.0')
+		//meta(http-equiv='X-Frame-Options', content='allow')
 		title Mr.AI Editor
 		link(rel='icon', href='favicon.ico')
 		link(rel='stylesheet', href='../mind/font-awesome/css/font-awesome.min.css')
@@ -65,7 +66,7 @@ html
 			p#userid(style='font-size:small;display:none;')=user._id
 			p
 				span STORY
-				p#Storytitle(style='font-size:1.0em;color:#2e99e5;text-overflow: ellipsis;')
+				p#Storytitle(style='font-size:1.0em;color:#00abec;text-overflow: ellipsis;')
 			p
 				span Layout
 				select#layout
@@ -74,26 +75,6 @@ html
 				span Shape
 				select#shape
 					option(value='') (Automatic)
-			p
-				span CONTEXT
-				select#value
-					option(value='') (None)
-					option(value='num') CONTEXT입력
-					// <optgroup label="Formula">
-					// <option value="sum">Sum</option>
-					// <option value="avg">Average</option>
-					// <option value="min">Minimum</option>
-					// <option value="max">Maximum</option>
-					// </optgroup>
-			p
-				textarea#output
-			p
-				span Status
-				select#status
-					option(value='') None
-					option(value='yes') Yes
-					option(value='no') No
-					option(value='computed') Autocompute
 			p
 				span Color
 				span#color
@@ -106,8 +87,28 @@ html
 					a(data-color='#3dd', title='Cyan', href='#')
 					a(data-color='#d3d', title='Magenta', href='#')
 					a(data-color='#fa3', title='Orange', href='#')
-			a#mrtalk(href='/', title='홈', target='_self')
-				img(src='../mind/Mr.Talk32x32.png', alt='Mr.Talk')
+					a(data-color='#ddd', title='Grey', href='#')
+			p
+				span Context
+				select#value
+					option(value='') (None)
+					option(value='num') CONTEXT입력
+					// <optgroup label="Formula">
+					// <option value="sum">Sum</option>
+					// <option value="avg">Average</option>
+					// <option value="min">Minimum</option>
+					// <option value="max">Maximum</option>
+					// </optgroup>
+			p
+				textarea#output
+			p
+				span Link
+				select#status
+					option(value='') None
+					option(value='yes') Yes
+					option(value='no') No
+					option(value='computed') Autocompute
+
 			button#toggle(title='Toggle UI')
 			button(data-command='Help', title='Help')
 				img(src='../mind/icons/help.png', alt='Help')
@@ -220,18 +221,11 @@ html
 		// Modal structure
 		#modal
 			// Page content
+		#mindtalk(style='position: absolute; top: 5px; left: 6px; cursor:pointer;')
+			img(src='../mind/Mr.Talk32x32.png', alt='Mr.Talk')
+
 		script.
-			$("#modal").iziModal({
-				iframe: true,
-				iframeHeight: 600,
-				iframeURL: "/storylist"
-			});
-
-			$(document).on('click', '.trigger', function (event) {
-				event.preventDefault();
-				$('#modal').iziModal('open', this); // Use "this" to get URL href or option 'iframeURL'
-			});
-
+			var story_id = '';
 			window.onload = function() {
 				MM.App.init();
 				MM.App.io.restore();
@@ -276,19 +270,83 @@ html
 					jqr_mindmap_load('entity', $(this).val());
 				});
 
-				$('#Intent1').click(function () {
-
-					$("#modal").iziModal('open', function (modal) {
-
-						modal.startLoading();
-
-						$.get('/storylist', function (data) {
-							$("#modal .iziModal-content").html(data);
-
-							modal.stopLoading();
+				$('#mindtalk').click(function () {
+					story_id = $('#Storyid').val();
+					if (story_id == '') {
+						alert('There is no story_id. after save, try again.');
+					} else {
+						
+						$("#modal").iziModal({
+							title: 'Mr.Mind',
+							subtitle: '',
+							//headerColor: '#88A0B9',
+							headerColor: '#00abec',
+							theme: '',  // light
+							attached: '', // bottom, top
+							icon: null,
+							iconText: null,
+							iconColor: '',
+							rtl: false,
+							width: 500,
+							padding: 0,
+							radius: 0,
+							zindex: 999,
+							iframe: true,
+							iframeHeight: 600,
+							iframeURL: "http://127.0.0.1:8000/?storyid=" + story_id,
+							focusInput: true,
+							group: '',
+							loop: false,
+							navigateCaption: true,
+							navigateArrows: true, // closeToModal, closeScreenEdge
+							history: true,
+							restoreDefaultContent: false,
+							autoOpen: 0, // Boolean, Number
+							bodyOverflow: false,
+							fullscreen: true,
+							openFullscreen: false,
+							closeOnEscape: true,
+							overlay: true,
+							overlayClose: true,
+							overlayColor: 'rgba(0, 0, 0, 0.4)',
+							timeout: true,
+							timeoutProgressbar: true,
+							pauseOnHover: false,
+							timeoutProgressbarColor: 'rgba(255,255,255,0.5)',
+							transitionIn: 'comingIn',
+							transitionOut: 'comingOut',
+							transitionInOverlay: 'fadeIn',
+							transitionOutOverlay: 'fadeOut',
+							onFullscreen: function () {
+							},
+							onResize: function () {
+							},
+							onOpening: function () {
+							},
+							onOpened: function () {
+							},
+							onClosing: function () {
+							},
+							onClosed: function () {
+							}
+							//iframe: true,
+							//iframeHeight: 450,
+							//iframeURL: "http://127.0.0.1:8000/?storyid=" + story_id
 						});
 
-					});
+						$("#modal").iziModal('open', function (modal) {
+
+							modal.startLoading();
+
+							$.get('/storylist', function (data) {
+								$("#modal .iziModal-content").html(data);
+								alert('editor_type:' + type);
+								modal.stopLoading();
+							});
+
+						});
+					}
+
 				});
 
 
@@ -296,8 +354,9 @@ html
 					MM.App.help.toggle();
 				});
 
-
 			});
+
+
 
 
 //			// http://izimodal.marcelodolce.com/#modal-large

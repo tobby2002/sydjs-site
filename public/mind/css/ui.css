@@ -265,6 +265,16 @@ button:not(:disabled) {
 	cursor:pointer;
 
 }
+.sconvert {
+	float: right;
+	width:25px;
+	margin-top: 6px;
+	margin-right: -30px;
+	cursor:wait;
+	color: #666;
+	cursor:pointer;
+
+}
 .sinput {
 	width: 25px;
 	float: right;

@@ -897,7 +897,7 @@ MM.Item.prototype._findLinks = function(node) {
 }
 MM.Map = function(options) {
 	var o = {
-		root: "Mindmap AI",
+		root: "MIND",
 		layout: MM.Layout.Map
 	}
 	for (var p in options) { o[p] = options[p]; }
@@ -2013,6 +2013,7 @@ MM.Command.Value = Object.create(MM.Command, {
 	label: {value: "Set value"},
 	keys: {value: [{charCode: "v".charCodeAt(0), ctrlKey:false, metaKey:false}]}
 });
+/** context 입력실행 */
 MM.Command.Value.execute = function() {
 	var item = MM.App.current;
 	var oldValue = item.getValue();
