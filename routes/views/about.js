@@ -9,11 +9,10 @@ exports = module.exports = function(req, res) {
 	locals.page.title = 'About SydJS';
 	
 	locals.organisers = [
-		{ name: 'Craig Sharkie', image: '/images/organiser-craig_sharkie.jpg', twitter: 'twalve',       title: 'Founder, MC, coordinator' },
-		// { name: 'Thinkmill', image: '/images/organiser-thinkmill.jpg',     twitter: 'thethinkmill', title: 'Site coordinator' },
-		{ name: 'Gil Davidson',     image: '/images/organiser-gil_davidson.jpg',     twitter: 'iamnotyourbroom',   title: 'Atlassian coordinator' },
-		{ name: 'Adam Ahmed',    image: '/images/organiser-adam_ahmed.jpg',    twitter: 'hitsthings',   title: 'Atlassian coordinator' },
-		{ name: 'Lachlan Hardy', image: '/images/organiser-lachlan_hardy.jpg', twitter: 'lachlanhardy', title: 'Community coordinator' }
+		{ name: 'W.S Jeong', image: '/images/jws.jpg', twitter: 'neoxio',       title: 'Founder, Mind AI Creator' },
+		{ name: 'Zian JJ',     image: '/images/zian.jpg',     twitter: 'zian',   title: 'AI Developer' },
+		{ name: 'Y.H LEE',    image: '/images/lyh.jpg',    twitter: 'zistar',   title: 'Design coordinator' },
+		{ name: 'Zistar Chale', image: '/images/putty.jpg', twitter: 'zichan', title: 'Community coordinator' }
 	]
 	
 	view.render('site/about');
