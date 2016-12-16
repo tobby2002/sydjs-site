@@ -10,6 +10,7 @@ html
 		link(rel='stylesheet', href='/styles/site.min.css')
 		link(rel='stylesheet', href='../mind/izimodal/css/iziModal.min.css')
 		script(src='http://code.jquery.com/jquery-latest.min.js')
+		script(src='../js/lib/notify/notify.min.js')
 		script(src='../mind/izimodal/js/iziModal.min.js')
 		script(src='../mind/my-mind.js')
 		link(rel='stylesheet', href='../mind/css/font.css')
@@ -42,7 +43,7 @@ html
 
 		ul#port
 			#tip Tab[sub]，Enter[sibling]
-		.ui
+		.ui(style='margin-top: 70px;margin-right: 10px;height:80%;')
 			p
 				if user
 					a(href='/me', target='_self').user.hidden-xs
@@ -89,8 +90,8 @@ html
 					a(data-color='#fa3', title='Orange', href='#')
 					a(data-color='#ddd', title='Grey', href='#')
 			p
-				span Context
-				select#value
+				//span Context
+				select#value(style='display: none;')
 					option(value='') (None)
 					option(value='num') CONTEXT입력
 					// <optgroup label="Formula">
@@ -100,8 +101,20 @@ html
 					// <option value="max">Maximum</option>
 					// </optgroup>
 			p
+				i.fa.fa-edit(aria-hidden='true', data-command='Value', style='cursor: pointer;')  Output
+			p
 				textarea#output
 			p
+				i.fa.fa-file-code-o(aria-hidden='true', data-command='Value', style='cursor: pointer;')  Context
+			p
+				textarea#context
+
+			p
+				i.fa.fa-reply-all(aria-hidden='true', data-command='Value', style='cursor: pointer;')  Link
+			p
+				textarea#go_to
+
+			p(style='display: none;')
 				span Link
 				select#status
 					option(value='') None
@@ -153,6 +166,7 @@ html
 				p(data-for='save load')
 					span Server
 					input.server(type='text')
+					#jsoneditor
 				p(data-for='save load')
 					span Auth
 					select.auth
@@ -189,8 +203,9 @@ html
 				p(data-for='save load')
 					button.go
 					button.cancel Cancel
-		#help.ui
-			img#close(src='../mind/icons/close.png', alt='Close', width='27', height='27', style='margin-top: 8px; position: fixed; margin-left: 212px; cursor:pointer;')
+		#help.ui(style='margin-top: 70px;margin-left: 0px;height:80%;')
+			i.fa.fa-arrow-left(aria-hidden='true', width='27', height='27',style='margin-top: 12px; color:#fff; position: fixed; margin-left: 212px; cursor:pointer;')#close
+
 			h3 Help
 			p
 				span Navigation
@@ -220,12 +235,34 @@ html
 		// Trigger to open Modal
 		// Modal structure
 		#modal
+		#modal_mindtalk
 			// Page content
-		#mindtalk(style='position: absolute; top: 5px; left: 6px; cursor:pointer;')
-			img(src='../mind/Mr.Talk32x32.png', alt='Mr.Talk')
+		#mindtalk(style='position: absolute; bottom: 20px; right: 20px; cursor:pointer;')
+			img(src='../mind/Mr.Talk32x32.png', alt='Mr.Mind')
 
 		script.
+			function ResponseJson(allData, output, context, go_to){
+				var item = MM.App.current;
+				var oldValue = item.getValue();
+				var newValue = allData;
+				if (newValue != null) {
+					document.getElementById("output").innerHTML = output;
+					document.getElementById("context").innerHTML = context;
+					document.getElementById("go_to").innerHTML = go_to;
+				}
+				if (newValue == null) {
+					return;
+				}
+				if (!newValue.length) {
+					newValue = null;
+				}
+				var numValue = newValue;
+				var action = new MM.Action.SetValue(item, isNaN(numValue) ? newValue : numValue);
+				MM.App.action(action);
+			}
 			var story_id = '';
+			
+
 			window.onload = function() {
 				MM.App.init();
 				MM.App.io.restore();
@@ -273,10 +310,10 @@ html
 				$('#mindtalk').click(function () {
 					story_id = $('#Storyid').val();
 					if (story_id == '') {
-						alert('There is no story_id. after save, try again.');
+						$.notify("There is no story_id.  After save, try again.", "warn");
 					} else {
 						
-						$("#modal").iziModal({
+						$("#modal_mindtalk").iziModal({
 							title: 'Mr.Mind',
 							subtitle: '',
 							//headerColor: '#88A0B9',
@@ -329,21 +366,10 @@ html
 							},
 							onClosed: function () {
 							}
-							//iframe: true,
-							//iframeHeight: 450,
-							//iframeURL: "http://127.0.0.1:8000/?storyid=" + story_id
 						});
 
-						$("#modal").iziModal('open', function (modal) {
-
+						$("#modal_mindtalk").iziModal('open', function (modal) {
 							modal.startLoading();
-
-							$.get('/storylist', function (data) {
-								$("#modal .iziModal-content").html(data);
-								alert('editor_type:' + type);
-								modal.stopLoading();
-							});
-
 						});
 					}
 
@@ -355,62 +381,3 @@ html
 				});
 
 			});
-
-
-
-
-//			// http://izimodal.marcelodolce.com/#modal-large
-//			$("#modal").iziModal({
-//				title: 'MR.MIND',
-//				subtitle: '',
-//				headerColor: '#88A0B9',
-//				theme: '',  // light
-//				attached: '', // bottom, top
-//				icon: null,
-//				iconText: null,
-//				iconColor: '',
-//				rtl: false,
-//				width: 600,
-//				padding: 0,
-//				radius: 3,
-//				zindex: 999,
-//				iframe: false,
-//				iframeHeight: 400,
-//				iframeURL: null,
-//				focusInput: true,
-//				group: '',
-//				loop: false,
-//				navigateCaption: true,
-//				navigateArrows: true, // closeToModal, closeScreenEdge
-//				history: true,
-//				restoreDefaultContent: false,
-//				autoOpen: 0, // Boolean, Number
-//				bodyOverflow: false,
-//				fullscreen: false,
-//				openFullscreen: false,
-//				closeOnEscape: true,
-//				overlay: true,
-//				overlayClose: true,
-//				overlayColor: 'rgba(0, 0, 0, 0.4)',
-//				timeout: false,
-//				timeoutProgressbar: false,
-//				pauseOnHover: false,
-//				timeoutProgressbarColor: 'rgba(255,255,255,0.5)',
-//				transitionIn: 'comingIn',
-//				transitionOut: 'comingOut',
-//				transitionInOverlay: 'fadeIn',
-//				transitionOutOverlay: 'fadeOut',
-//				onFullscreen: function () {
-//				},
-//				onResize: function () {
-//				},
-//				onOpening: function () {
-//				},
-//				onOpened: function () {
-//				},
-//				onClosing: function () {
-//				},
-//				onClosed: function () {
-//				}
-//			});
-

@@ -89,7 +89,7 @@ exports = module.exports = function(req, res) {
 					to: subscriber.email,
 					from: {
 						name: 'SydJS',
-						email: 'hello@sydjs.com'
+						email: 'hello@mindmap.ai'
 					}
 				}, doneSubscriber);
 			}, function(err) {

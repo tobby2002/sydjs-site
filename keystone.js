@@ -19,8 +19,8 @@ var pkg = require('./package.json');
 
 keystone.init({
 
-	'name': '미스터톡',
-	'brand': 'Mr.TALK',
+	'name': 'Mindmap.ai',
+	'brand': 'Mr.MIND',
 	'back': '/me',
 
 	'favicon': 'public/favicon.ico',

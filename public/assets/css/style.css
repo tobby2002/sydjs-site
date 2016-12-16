@@ -18,7 +18,8 @@
 /*Boxed Layout
 ------------------------------------*/
 .wrapper {
-  background: #fff;
+  /*background: #fff;*/
+  background: #202e4a;
 }
 
 .boxed-layout {

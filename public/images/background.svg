@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="301px" height="524px" viewBox="0 0 301 524" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
+    <title>Background Image</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="1024" height="717"></rect>
+        <rect id="path-3" x="-5.68434189e-14" y="0.480740488" width="115.24381" height="677.743641" rx="8.63999846"></rect>
+        <rect id="path-5" x="-5.68434189e-14" y="0.480740488" width="115.24381" height="115.377717" rx="8.63999846"></rect>
+        <rect id="path-7" x="0.216082144" y="-1.13686838e-13" width="86.4328577" height="655.537229" rx="6.47999884"></rect>
+        <rect id="path-9" x="0.216082144" y="-1.13686838e-13" width="86.4328577" height="86.5612815" rx="6.47999884"></rect>
+        <rect id="path-11" x="5.68434189e-13" y="0.500696702" width="108.559491" height="680.47822" rx="8.09999855"></rect>
+        <rect id="path-13" x="5.68434189e-13" y="0.500696702" width="108.559491" height="108.119673" rx="8.09999855"></rect>
+        <rect id="path-15" x="0.270713566" y="0.281380146" width="64.9173824" height="432.784634" rx="4.85999913"></rect>
+        <rect id="path-17" x="0.270713566" y="0.281380146" width="64.9173824" height="64.83965" rx="4.85999913"></rect>
+        <rect id="path-19" x="0.270713566" y="0.281380146" width="64.9173824" height="432.784634" rx="4.85999913"></rect>
+        <rect id="path-21" x="0.270713566" y="0.281380146" width="64.9173824" height="64.83965" rx="4.85999913"></rect>
+    </defs>
+    <g id="MeisterTask-Website" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Background-Image" sketch:type="MSLayerGroup" transform="translate(-723.000000, 0.000000)">
+            <g id="Background">
+                <mask id="mask-2" sketch:name="Mask" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" sketch:type="MSShapeGroup" xlink:href="#path-1"></use>
+                <g id="Mask-+-Header-+-Group" mask="url(#mask-2)">
+                    <g transform="translate(1151.391033, 425.731333) rotate(-45.000000) translate(-1151.391033, -425.731333) translate(1092.891033, 85.731333)" id="Mask-+-Header">
+                        <g transform="translate(0.000000, 0.288444)">
+                            <mask id="mask-4" sketch:name="Mask" fill="white">
+                                <use xlink:href="#path-3"></use>
+                            </mask>
+                            <use id="Mask" opacity="0.2" fill="#A47EE6" sketch:type="MSShapeGroup" xlink:href="#path-3"></use>
+                            <mask id="mask-6" sketch:name="Mask" fill="white">
+                                <use xlink:href="#path-5"></use>
+                            </mask>
+                            <use id="Mask" fill="#A47EE6" sketch:type="MSShapeGroup" xlink:href="#path-5"></use>
+                        </g>
+                    </g>
+                </g>
+                <g id="Mask-+-Header-+-Group" mask="url(#mask-2)">
+                    <g transform="translate(675.258932, -167.988614) rotate(-225.000000) translate(-675.258932, 167.988614) translate(631.258932, -496.488614)" id="Mask-+-Header">
+                        <g transform="translate(0.718607, 0.145335)">
+                            <mask id="mask-8" sketch:name="Mask" fill="white">
+                                <use xlink:href="#path-7"></use>
+                            </mask>
+                            <use id="Mask" opacity="0.2" fill="#A1E65C" sketch:type="MSShapeGroup" xlink:href="#path-7"></use>
+                            <mask id="mask-10" sketch:name="Mask" fill="white">
+                                <use xlink:href="#path-9"></use>
+                            </mask>
+                            <use id="Mask" fill="#A1E65C" sketch:type="MSShapeGroup" xlink:href="#path-9"></use>
+                        </g>
+                    </g>
+                </g>
+                <g id="Mask-+-Header-+-Group" mask="url(#mask-2)">
+                    <g transform="translate(998.280683, -21.895161) rotate(-135.000000) translate(-998.280683, 21.895161) translate(943.280683, -362.895161)" id="Mask-+-Header">
+                        <g transform="translate(0.332327, 0.771762)">
+                            <mask id="mask-12" sketch:name="Mask" fill="white">
+                                <use xlink:href="#path-11"></use>
+                            </mask>
+                            <use id="Mask" opacity="0.2" fill="#41D9D9" sketch:type="MSShapeGroup" xlink:href="#path-11"></use>
+                            <mask id="mask-14" sketch:name="Mask" fill="white">
+                                <use xlink:href="#path-13"></use>
+                            </mask>
+                            <use id="Mask" fill="#41D9D9" sketch:type="MSShapeGroup" xlink:href="#path-13"></use>
+                        </g>
+                    </g>
+                </g>
+                <g id="Mask-+-Header-+-Group" mask="url(#mask-2)">
+                    <g transform="translate(1114.151881, 168.019336) rotate(-315.000000) translate(-1114.151881, -168.019336) translate(984.151881, -208.980664)" id="Mask-+-Header">
+                        <g transform="translate(33.653851, 217.856639) rotate(-180.000000) translate(-33.653851, -217.856639) translate(0.653851, 0.856639)">
+                            <mask id="mask-16" sketch:name="Mask" fill="white">
+                                <use xlink:href="#path-15"></use>
+                            </mask>
+                            <use id="Mask" opacity="0.2" fill="#18CCF0" sketch:type="MSShapeGroup" xlink:href="#path-15"></use>
+                            <mask id="mask-18" sketch:name="Mask" fill="white">
+                                <use xlink:href="#path-17"></use>
+                            </mask>
+                            <use id="Mask" fill="#18CCF0" sketch:type="MSShapeGroup" xlink:href="#path-17"></use>
+                        </g>
+                        <g transform="translate(226.694002, 536.761797) rotate(-180.000000) translate(-226.694002, -536.761797) translate(193.694002, 319.761797)">
+                            <mask id="mask-20" sketch:name="Mask" fill="white">
+                                <use xlink:href="#path-19"></use>
+                            </mask>
+                            <use id="Mask" opacity="0.2" fill="#FFC61A" sketch:type="MSShapeGroup" xlink:href="#path-19"></use>
+                            <mask id="mask-22" sketch:name="Mask" fill="white">
+                                <use xlink:href="#path-21"></use>
+                            </mask>
+                            <use id="Mask" fill="#FFC61A" sketch:type="MSShapeGroup" xlink:href="#path-21"></use>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -6,9 +6,9 @@ block flash-messages
 block intro
 	.page-intro: .container
 		h1.page-title Members
-		p.lead The people who make up SydJS. 
+		p.lead The people who make up Mr.MIND.
 			if !user
-				a(href='/join').js-auth-trigger Add your tile
+				a(href='/join').js-auth-trigger  Add your tile
 
 mixin member(member)
 	- var twitterUsername = member.twitterUsername || (member.twitter ? member.twitter.replace('@', ''): '');

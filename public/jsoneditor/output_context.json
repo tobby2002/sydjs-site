@@ -1,0 +1,34 @@
+{
+  "properties": {
+    "output": {
+      "type": "object",
+      "title": "OUTPUT",
+      "properties": {
+        "text": {
+          "type": "string"
+        }
+      }
+    },
+    "context": {
+      "type": "object",
+      "title": "CONTEXT",
+      "properties": {
+          "reprompt": "boolean",
+          "default_counter": "string",
+          "input_field": "boolean",
+          "call_retrieve_and_rank": "boolean",
+          "default_counter": "boolean"
+          
+      }
+    },
+    "go_to": {
+      "type": "object",
+      "title": "LINK",
+      "properties": {
+          "return": "boolean",
+          "selector": "string",
+          "dialog_node": "string"
+      }
+    }
+  }
+}

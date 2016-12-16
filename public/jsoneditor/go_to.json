@@ -1,0 +1,23 @@
+{
+  "title": "CONTEXT",
+  "type": "object",
+  "id": "person",
+  "properties": {
+    "return": {
+      "type": "string",
+      "description": "null"
+    },
+    "dialog_node": {
+      "type": "string",
+      "description": ""
+    },
+    "selector": {
+      "type": "string",
+      "enum": [
+        "body",
+        "condition",
+        "input_input",
+      ]
+    }
+  }
+}

@@ -3,9 +3,10 @@ header(id='header', role='banner', class=(section == 'home' ? 'header--home' : '
 	nav.navbar(role='navigation'): .container
 		//- Site logo + site nav trigger button (on mobile)
 		.navbar-header
-			a(href='/', title='Back to Home').site-branding
-				include /public/images/logo.svg
-				//include /public/images/Mr35x35.jpg
+			a(href='/', title='Back to Home' style='text-decoration:none;').site-branding
+				//include /public/images/logo.svg
+				img(src=('/images/mind.png'), width=32, style='margin-top:7px;').img-circle
+				div(style='font-size: 1.25em;margin-left: 40px;margin-top: -15px;') Mr.MIND
 			//- User avatar
 			if user
 				a(href='/me').user.visible-xs
@@ -21,13 +22,13 @@ header(id='header', role='banner', class=(section == 'home' ? 'header--home' : '
 						li(class=(section == link.key ? 'nav-item-' + link.key + ' active' : 'nav-item-' + link.key)): a(href=link.href)= link.label
 						
 					if user	
-						li: a(href='/storylist').user.hidden-xs
-							img(src='/images/mind.png', width=27).img-circle
-							=' Mindmap.AI 에디터'
+						li: a(href='/storylist').user
+							//img(src='/images/mind.png', width=27).img-circle
+							=' MIND AI Editor'
 					else
 						li: a(href='/signin', data-from=page.path, data-initial='signin').js-auth-trigger 
-							img(src='/images/mind.png', width=27).img-circle
-							=' Mindmap.AI 에디터'
+							//img(src='/images/mind.png', width=27).img-circle
+							=' MIND AI Editor'
 
 
 				ul.navbar-nav.navbar-nav--right

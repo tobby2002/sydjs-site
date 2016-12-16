@@ -385,8 +385,9 @@ blockquote:hover {
 
 /*Portfolio v2*/
 .sorting-block .sorting-nav li.active {
-	color: #72c02c;
-	border-bottom: solid 1px #72c02c;
+	/*color: #72c02c;*/
+	color: #00abec;
+	border-bottom: solid 1px #00abec;
 }
 
 .sorting-block .sorting-grid li a:hover span.sorting-cover {

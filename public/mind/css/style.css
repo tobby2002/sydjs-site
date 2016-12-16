@@ -80,6 +80,23 @@ ul {
 #output {
 	text-align: left;
 	width: 166px;
-	height: 160px;
+	height: 80px;
+	font-size: 0.81em;
+	border-color: rgba(102,102,102,0.5);
+}
+
+#context {
+	text-align: left;
+	width: 166px;
+	height: 30px;
+	font-size: 0.81em;
+	border-color: rgba(102,102,102,0.5);
+}
+
+#go_to {
+	text-align: left;
+	width: 166px;
+	height: 30px;
+	font-size: 0.81em;
 	border-color: rgba(102,102,102,0.5);
 }

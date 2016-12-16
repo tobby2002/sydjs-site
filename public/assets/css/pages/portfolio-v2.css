@@ -51,7 +51,8 @@
 	display: block;
 	margin-top: 1px;
 	/*background: #fcfcfc;*/
-	background: rgba(0, 0, 0, 0.05);
+	background: #007ead;
+	color:#fff;
 }
 
 .sorting-block .sorting-grid li span.sorting-cover p {	

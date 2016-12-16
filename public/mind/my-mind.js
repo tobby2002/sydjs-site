@@ -472,6 +472,7 @@ MM.Item.prototype.clone = function() {
 	return this.constructor.fromJSON(data);
 }
 
+/** 입력 선택 **/
 MM.Item.prototype.select = function() {
 	this._dom.node.classList.add("current");
 	this.getMap().ensureItemVisibility(this);
@@ -485,6 +486,7 @@ MM.Item.prototype.deselect = function() {
 	this._dom.node.classList.remove("current");
 }
 
+/** 입력 업데이트 */
 MM.Item.prototype.update = function(doNotRecurse) {
 	var map = this.getMap();
 	if (!map || !map.isVisible()) { return this; }
@@ -805,6 +807,7 @@ MM.Item.prototype._updateStatus = function() {
 	}
 }
 
+/** 입력 업데이트 파트 */
 MM.Item.prototype._updateValue = function() {
 	this._dom.value.style.display = "";
 
@@ -1173,6 +1176,7 @@ MM.Keyboard.init = function() {
 	window.addEventListener("keypress", this);
 }
 
+/** 키보드 핸들 이벤트 */
 MM.Keyboard.handleEvent = function(e) {
 	/* mode 2a: ignore keyboard when the activeElement resides somewhere inside of the UI pane */
 	var node = document.activeElement;
@@ -1583,7 +1587,8 @@ MM.Menu = {
 	close: function() {
 		this._dom.node.style.display = "none";
 	},
-	
+
+	/** 핸들이벤트 */
 	handleEvent: function(e) {
 		if (e.currentTarget != this._dom.node) {
 			this.close();
@@ -2015,21 +2020,81 @@ MM.Command.Value = Object.create(MM.Command, {
 });
 /** context 입력실행 */
 MM.Command.Value.execute = function() {
-	var item = MM.App.current;
-	var oldValue = item.getValue();
-	var newValue = prompt("OUTPUT 입력 : ", oldValue);
-	if (newValue != null) {
-		document.getElementById("output").innerHTML = newValue;
-	}
-	if (newValue == null) { return; }
+    // var item = MM.App.current;
+    // var oldValue = item.getValue();
 
-	if (!newValue.length) { newValue = null; }
+    $("#modal").iziModal({
+        title: 'Mind Json Editor',
+        subtitle: '',
+        headerColor: '#88A0B9',
+        theme: '',  // light
+        attached: '', // bottom, top
+        icon: null,
+        iconText: null,
+        iconColor: '',
+        rtl: false,
+        width: 800,
+        padding: 0,
+        radius: 0,
+        zindex: 999,
+        iframe: true,
+        iframeHeight: 600,
+        iframeURL: "/jsoneditor",
+        focusInput: true,
+        group: '',
+        loop: false,
+        navigateCaption: true,
+        navigateArrows: true, // closeToModal, closeScreenEdge
+        history: true,
+        restoreDefaultContent: false,
+        autoOpen: 0, // Boolean, Number
+        bodyOverflow: false,
+        fullscreen: true,
+        openFullscreen: false,
+        closeOnEscape: true,
+        overlay: true,
+        overlayClose: true,
+        overlayColor: 'rgba(0, 0, 0, 0.4)',
+        timeout: true,
+        timeoutProgressbar: true,
+        pauseOnHover: false,
+        timeoutProgressbarColor: 'rgba(255,255,255,0.5)',
+        transitionIn: 'comingIn',
+        transitionOut: 'comingOut',
+        transitionInOverlay: 'fadeIn',
+        transitionOutOverlay: 'fadeOut',
+        onFullscreen: function () {
+        },
+        onResize: function () {
+        },
+        onOpening: function () {
+        },
+        onOpened: function () {
+        },
+        onClosing: function () {
+        },
+        onClosed: function () {
+        }
+    });
 
-	// var numValue = parseFloat(newValue);
-	var numValue = newValue;
+    $("#modal").iziModal('open', function (modal) {
+        modal.startLoading();
+    });
+
+	//
+	// var newValue = returndata;
+	// if (newValue != null) {
+	// 	document.getElementById("output").innerHTML = newValue;
+	// }
+	// if (newValue == null) { return; }
+    //
+	// if (!newValue.length) { newValue = null; }
+    //
+	// // var numValue = parseFloat(newValue);
+	// var numValue = newValue;
+	// // var action = new MM.Action.SetValue(item, isNaN(numValue) ? newValue : numValue);
 	// var action = new MM.Action.SetValue(item, isNaN(numValue) ? newValue : numValue);
-	var action = new MM.Action.SetValue(item, isNaN(numValue) ? newValue : numValue);
-	MM.App.action(action);
+	// MM.App.action(action);
 }
 
 MM.Command.Yes = Object.create(MM.Command, {
@@ -3824,6 +3889,7 @@ MM.UI.Layout = function() {
 	this._select.addEventListener("change", this);
 }
 
+/** 입력 업데이트 레이아웃 */
 MM.UI.Layout.prototype.update = function() {
 	var value = "";
 	var layout = MM.App.current.getOwnLayout();
@@ -3875,18 +3941,39 @@ MM.UI.Shape.prototype.handleEvent = function(e) {
 	var action = new MM.Action.SetShape(MM.App.current, shape);
 	MM.App.action(action);
 }
+
+/** context 입력이벤트 선택 중요 */
 MM.UI.Value = function() {
 	this._select = document.querySelector("#value");
 	this._select.addEventListener("change", this);
 }
 
+String.prototype.replaceAll = function(org, dest) {
+    return this.split(org).join(dest);
+}
+
+/** context 입력갱신 */
 MM.UI.Value.prototype.update = function() {
 	var value = MM.App.current.getValue();
 	if (value === null) { value = ""; }
 	if (typeof(value) == "number") { value = "num" }
-	// this._dom.value.style.display = "none";
-	var x = document.getElementsByClassName("value");  //.classList.add('hidden');
-	document.getElementById("output").innerHTML = value;
+    //document.getElementById("output").innerHTML = value;
+    //alert("value:" + value);
+    if (value != '') {
+		//alert("현재밸류:" + value);
+        var oVal = JSON.parse(value);
+        var stext = oVal.output.text;
+        var scontext = JSON.stringify(oVal.context);
+        var sgo_to = JSON.stringify(oVal.go_to);
+        document.getElementById("output").innerHTML = stext;
+        document.getElementById("context").innerHTML = scontext;
+        document.getElementById("go_to").innerHTML = sgo_to;
+	} else {
+        document.getElementById("output").innerHTML = '';
+        document.getElementById("context").innerHTML = '';
+        document.getElementById("go_to").innerHTML = '';
+	}
+
 	this._select.value = value;
 }
 
@@ -4640,6 +4727,7 @@ MM.UI.Backend.Firebase.show = function(mode) {
 	this._sync();
 }
 
+/** 입력 키이벤트 예외 */
 MM.UI.Backend.Firebase.handleEvent = function(e) {
 	MM.UI.Backend.handleEvent.call(this, e);
 
@@ -4883,6 +4971,7 @@ MM.Mouse.init = function(port) {
 	this._port.addEventListener("contextmenu", this);
 }
 
+/** 마우스 핸들이벤트 */
 MM.Mouse.handleEvent = function(e) {
 	switch (e.type) {
 		case "click":
@@ -5154,6 +5243,7 @@ setInterval(function() {
 }, 1000);
 */
 
+/** 키보드 설명 */
 /*
  * Notes regarding app state/modes, activeElements, focusing etc.
  * ==============================================================
@@ -5329,13 +5419,16 @@ $(function() {
             $('#Type').val(data['type']);
             $('#Storyid').val(data['storyid']);
             $('#Storytitle').text(data['storytitle']);
+
         }, "json")
             .done(function() {
                 MM.App.setThrobber(false);
                 MM.UI.Backend.WebDAV.list();
             })
             .fail(function() {
-                alert( "Error: fail save" );
+                $.notify("Fail to save!", "error");
+                $.notify("노드 명령어에서 큰다옴표를 사용할 수 없습니다!", "info");
+
                 MM.App.setThrobber(false);
             })
             .always(function() {
@@ -5363,12 +5456,12 @@ $(function() {
             }, "json")
                 .done(function() {
                     MM.App.setThrobber(false);
+                    $.notify("Delete successfully!", "success");
                     MM.UI.Backend.WebDAV.list();
 
                 })
                 .fail(function() {
-                    alert( "Error: fail delete" );
-                    alert(data);
+                    $.notify("Fail to delete!", "error");
                     MM.App.setThrobber(false);
                 })
                 .always(function() {
@@ -5405,12 +5498,13 @@ $(function() {
             //$('<input type="button" value="'+data['root']['text']+'" class="sstory" style="width: 100%;" onclick="jqr_mindmap_load(\'' + type + '\', \'' + data['root']['id'] + '\')>').appendTo("#storyinfo");
             MM.UI.Backend.WebDAV._loadDone(jdata);
             window.history.pushState('page2', 'Title', '/editor?id='+ id+'&type='+type);
+
         }, "json")
             .done(function() {
                 MM.App.setThrobber(false);
             })
             .fail(function() {
-                alert( "Error: fail load" );
+                $.notify("After saving, retry!", "info");
                 MM.App.setThrobber(false);
             })
             .always(function() {
@@ -5419,7 +5513,6 @@ $(function() {
             });
 
         jqxhr.always(function() {
-            // alert( "second finished" );
             MM.App.setThrobber(false);
         });
     }
@@ -5440,7 +5533,7 @@ $(function() {
                 // webdata = i + " : title: " + data[i]['title'] + " : description: " + data[i]['description'] + " : mindmap: " + data[i]['mindmap'];
                 //alert(webdata);
                 $('<input type="button" value="'+data[i]['title']+'" class="slist" style="width: 85%;" onclick="jqr_mindmap_load(\'\', \''+data[i]['mindmap']+'\')">').appendTo("#stories");
-                $('<a href="#" style="width: 24px;float:right;border: 0px solid;z-index:10000;" onclick=\"jqr_story_delete(\'\', \''+data[i]['id']+'\');return false;"><i class="fa fa-trash-o sdelete" ></i></a>').appendTo("#stories");
+                $('<a href="#" style="width: 24px;float:right;border: 0px solid;z-index:10000;color:#fff;" onclick=\"jqr_story_delete(\'\', \''+data[i]['id']+'\');return false;"><i class="fa fa-trash-o sdelete" ></i></a>').appendTo("#stories");
             }
         }, "json")
             .done(function() {
@@ -5449,8 +5542,7 @@ $(function() {
                 //this._loadDone(data)
             })
             .fail(function() {
-                alert( "Error: fail list" );
-                alert(data);
+                $.notify("Fail to load:" + data, "warn");
                 MM.App.setThrobber(false);
             })
             .always(function() {
@@ -5469,7 +5561,6 @@ $(function() {
     }
 
     j_function_list = my_fun_list;
-
 
 })
 
